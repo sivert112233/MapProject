@@ -12,26 +12,25 @@ new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 //Adding markers on load. --FIX NAME!!!
-window.addEventListener('load', () => {   const [jTets, jTets2 ] = JSON.parse(localStorage.getItem('lsAllLatLonLocations'));
-    const [jTets, jTets2 ] = JSON.parse(localStorage.getItem('lsAllLatLonLocations', 'manuallyAdded'));
-
-
-    if (jTets) {
-        jTets.forEach((x) => {
+window.addEventListener('load', () => {
+    const manuallyAdded = JSON.parse(localStorage.getItem('manuallyAdded'));
+    const AddedByRoute = JSON.parse(localStorage.getItem('routeLatAndLon'));
+    
+    if (AddedByRoute) {
+        AddedByRoute.forEach((x) => {
             L.marker(x).addTo(map).on('click', event => removeLocation(event));
         });
-    } else if (jTets2) {
-        jTets2.forEach((x) => {
+    }
+    if (manuallyAdded) {
+        manuallyAdded.forEach((x) => {
             L.marker(x).addTo(map).on('click', event => removeLocation(event));
         });
-    } else {
+    }else{
         L.marker([60.908479414005015, 10.810253805299897]).addTo(map).on('click', event => {
             removeLocation(event);
         });
     }
     //--------------------------??????????????????????????----------------------------------
-
-
 });
 
 

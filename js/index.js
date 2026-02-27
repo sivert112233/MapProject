@@ -88,12 +88,13 @@ function addLocationBySearch() {
                     document.querySelectorAll('.destinationConfirmButton').forEach(x => {
                         x.addEventListener('click', () => {
                             if (x.value === 'y') {
-                                //Add to local storage.
-                                //Find a way to display the location name. Make a new key in local storage with the name manuallyAdded
-
-                                localStorage.setItem('manuallyAdded', [lat, lon]);
-
-                                console.log(localStorage);
+                                if (localStorage.manuallyAdded) {
+                                    const manuallyAddedArray = JSON.parse(localStorage.getItem('manuallyAdded'));
+                                    manuallyAddedArray.push([lat, lon]);
+                                    localStorage.setItem('manuallyAdded', JSON.stringify(manuallyAddedArray));
+                                } else {
+                                    localStorage.setItem('manuallyAdded', JSON.stringify([[lat, lon]]));
+                                }
                                 window.location.reload();
                             }
                             if (x.value === 'n') {
@@ -109,7 +110,7 @@ function addLocationBySearch() {
 
 
 function renderPage() {
-    if (localStorage.lsAllLatLonLocations) {
+    if (localStorage.routeLatAndLon) {
         //Declaring and claring the page.
         const locationData = JSON.parse(localStorage.lsSelectedRoute);
         pageMain.innerHTML = '';
@@ -216,7 +217,7 @@ function renderPage() {
                     storageArray.push(x.latLng);
                 });
                 //Puts selection inn local storage
-                localStorage.lsAllLatLonLocations = JSON.stringify(storageArray);
+                localStorage.routeLatAndLon = JSON.stringify(storageArray);
                 localStorage.lsSelectedRoute = JSON.stringify(selectedRoute);
                 window.location.reload();
             });
