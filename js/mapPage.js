@@ -10,50 +10,50 @@ new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-
 //Adding markers on load. --FIX NAME!!!
 window.addEventListener('load', () => {
     const manuallyAdded = JSON.parse(localStorage.getItem('manuallyAdded'));
     const AddedByRoute = JSON.parse(localStorage.getItem('routeLatAndLon'));
-    
+
     if (AddedByRoute) {
         AddedByRoute.forEach((x) => {
-            L.marker(x).addTo(map).on('click', () => {
-                getDir(x);
-            });
+            L.marker(x).addTo(map).on('click', y => { test(x, y) });
         });
     }
     if (manuallyAdded) {
         manuallyAdded.forEach((x) => {
-            L.marker(x).addTo(map).on('click', () => {
-                getDir(x);
-            });
+            L.marker(x).addTo(map).on('click', y => { test(x, y) });
         });
-    }else{
-        L.marker([60.908479414005015, 10.810253805299897]).addTo(map).on('click', event => {
-            removeLocation(event);
+    } else {
+        const x = [60.908479414005015, 10.810253805299897];
+        L.marker(x).addTo(map).on('click', y => {
+            test(x, y);
         });
     }
     //--------------------------??????????????????????????----------------------------------
 });
 
+function test(x, y) {
+    document.querySelector('#markerClicked').style.display = 'flex';
 
-
-
-
-//Removes marker by clicking it.
-function removeLocation(event) {
-    confirm('ØNSKER DU Å FJÆRNE LOKASJONEN?') && event.target.remove();
-}
-
-//Add route search in google.
-function getDir(x) {
-    if (confirm('Ønsker du å få en veibeskrivelse i google maps?')){
+    document.querySelector('.markerClickedBoxGetLoc').addEventListener('click', () => {
         window.location.href = `https://www.google.com/maps/place/${x}`;
-    }
+        document.querySelector('#markerClicked').style.display = 'none';
+    });
+
+    document.querySelector('.markerClickedBoxRemov').addEventListener('click', () => {
+        y.target.remove();
+        document.querySelector('#markerClicked').style.display = 'none';
+    });
+
+    document.querySelector('.markerClickedBoxtoMap').addEventListener('click', () => {
+        document.querySelector('#markerClicked').style.display = 'none';
+    });
+
+    document.querySelector('#markerClicked').addEventListener('click', () => {
+        document.querySelector('#markerClicked').style.display = 'none';
+    });
 }
-
-
 
 
 
