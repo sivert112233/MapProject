@@ -18,12 +18,16 @@ window.addEventListener('load', () => {
     
     if (AddedByRoute) {
         AddedByRoute.forEach((x) => {
-            L.marker(x).addTo(map).on('click', event => removeLocation(event));
+            L.marker(x).addTo(map).on('click', () => {
+                getDir(x);
+            });
         });
     }
     if (manuallyAdded) {
         manuallyAdded.forEach((x) => {
-            L.marker(x).addTo(map).on('click', event => removeLocation(event));
+            L.marker(x).addTo(map).on('click', () => {
+                getDir(x);
+            });
         });
     }else{
         L.marker([60.908479414005015, 10.810253805299897]).addTo(map).on('click', event => {
@@ -37,10 +41,19 @@ window.addEventListener('load', () => {
 
 
 
-//---removes marker by clicking it.
+//Removes marker by clicking it.
 function removeLocation(event) {
     confirm('ØNSKER DU Å FJÆRNE LOKASJONEN?') && event.target.remove();
 }
+
+//Add route search in google.
+function getDir(x) {
+    if (confirm('Ønsker du å få en veibeskrivelse i google maps?')){
+        window.location.href = `https://www.google.com/maps/place/${x}`;
+    }
+}
+
+
 
 
 
