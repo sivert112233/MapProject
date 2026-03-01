@@ -17,23 +17,23 @@ window.addEventListener('load', () => {
 
     if (AddedByRoute) {
         AddedByRoute.forEach((x) => {
-            L.marker(x).addTo(map).on('click', y => { test(x, y) });
+            L.marker(x).addTo(map).on('click', markerEvent => { markerOptions(x, markerEvent) });
         });
     }
     if (manuallyAdded) {
         manuallyAdded.forEach((x) => {
-            L.marker(x).addTo(map).on('click', y => { test(x, y) });
+            L.marker(x).addTo(map).on('click', markerEvent => { markerOptions(x, markerEvent) });
         });
     } else {
         const x = [60.908479414005015, 10.810253805299897];
-        L.marker(x).addTo(map).on('click', y => {
-            test(x, y);
+        L.marker(x).addTo(map).on('click', markerEvent => {
+            markerOptions(x, markerEvent);
         });
     }
     //--------------------------??????????????????????????----------------------------------
 });
 
-function test(x, y) {
+function markerOptions(x, markerEvent) {
     document.querySelector('#markerClicked').style.display = 'flex';
 
     document.querySelector('.markerClickedBoxGetLoc').addEventListener('click', () => {
@@ -42,7 +42,22 @@ function test(x, y) {
     });
 
     document.querySelector('.markerClickedBoxRemov').addEventListener('click', () => {
-        y.target.remove();
+        //Removing marker from map. 
+        markerEvent.target.remove();
+
+        //Removing from local storage.
+        const array = JSON.parse(localStorage.getItem('routeLatAndLon'));
+        const returnArray = [];
+        array.forEach(location => {
+            if (location.includes(x[0] && x[1])) {
+                return
+            } else {
+                returnArray.push(location);
+            }
+        });
+        localStorage.setItem('routeLatAndLon', JSON.stringify(returnArray));
+
+        //Removing display
         document.querySelector('#markerClicked').style.display = 'none';
     });
 
@@ -54,8 +69,3 @@ function test(x, y) {
         document.querySelector('#markerClicked').style.display = 'none';
     });
 }
-
-
-
-
-
