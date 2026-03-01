@@ -1,39 +1,23 @@
 import { routeData } from '../data/data.js';
 const pageMain = document.querySelector('.startPageMainDisplay');
-
-
-
 //Renders the page based om the local storage state.
 renderPage();
 
-//add events listeners to the page buttons.
-
-document.querySelector('.mapButton').addEventListener('click', () => {
+//adding event listeners to the page buttons.
+document.querySelector('.startPageHeaderButtonRight').addEventListener('click', () => {
     document.location.href = 'mapPage.html';
 });
 
-
-
-//-----------------------???-------------------------------------------------------------//
-document.querySelector('.addLocationButton').addEventListener('click', () => {
-    addLocationBySearch();
-});
-
-
-document.querySelector('.startPageHeaderResetButton').addEventListener('click', () => {
+document.querySelector('.startPageHeaderButtonleft').addEventListener('click', () => {
     localStorage.clear();
     window.location.reload();
 });
 
+//Er ikke sikkert at jeg trennger denne???
+addLocationBySearch();
 
 //Functions
 function addLocationBySearch() {
-    //Rendering HTML
-    document.querySelector('.startPageMainAddInputBox').innerHTML = `
-        <input class="destinationSearchInput" type="text" placeholder="Destinasjon">
-        <button class="destinationSearchButton">Søk</button>
-    `;
-
     //Declaration
     const input = document.querySelector('.destinationSearchInput');
     const button = document.querySelector('.destinationSearchButton');
@@ -116,17 +100,18 @@ function renderPage() {
         pageMain.innerHTML = '';
 
         // Adding first line with information to the list.
+        /*
         pageMain.innerHTML = `
             <div class="startPageMainDisplayBox">
-            <div class="startPageMainDisplayStopNrbox">
-                    <p>NR</p>
+                <div class="startPageMainDisplayStopNrbox">
+                    <p class="startPageMainDisplayStopNrboxFont">Antall</p>
                 </div>
                 <div class="startPageMainDisplayStopNameBox">
-                    <p>STOP NAME</p>
+                    <p class="startPageMainDisplayStopNrboxFont">Destinasjon</p>
                 </div>
             </div>
         `;
-
+        */
         //Adding the locations to the list. And saving them in local storage. 
         locationData.forEach((e) => {
             pageMain.innerHTML += `
@@ -147,6 +132,7 @@ function renderPage() {
         const pageMain = document.querySelector('.startPageMainDisplay');
         pageMain.innerHTML = `
         <div class="pageMainRouteOptions">
+            <p class="startPageMainDisplayText">Velg ruten du kjører</p>
             <button id="kongsvingerMandag" class="pageMainRouteOptionsButtons">Kongsvinger Mandag</button>
             <button id="kongsvingerTorsdag" class="pageMainRouteOptionsButtons">Kongsvinger Torsdag</button>
             <button id="mjøsaMandagn" class="pageMainRouteOptionsButtons">Mjøsa Mandag</button>

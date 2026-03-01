@@ -17,38 +17,22 @@
 
 <body>
     <header class="startPageHeader">
-        <div class="startPageHeaderLogo">
-            RouteForce
-        </div>
+        <button class="startPageHeaderButtonleft">Resett</button>
+        <p class="startPageHeaderLogo">RouteForce</p>
+        <button class="startPageHeaderButtonRight">Kart</button>
     </header>
     <main class="startPageMain">
-        <div class="startPageMainDisplay">
-            <!--Container of code rendered in JS-->
+        <div class="startPageMainScroll">
+            <div class="startPageMainDisplay">
+                <!--Container of code rendered in JS-->
+            </div>
         </div>
-
         <div class="startPageMainAddInputBox">
-            <button class="mapButton">Til kart</button>
-            <button class="addLocationButton">Legg til med søk</button>
+            <input class="destinationSearchInput" type="text" placeholder="Søk lokasjoner manuelt">
+            <button class="destinationSearchButton">Søk</button>
         </div>
     </main>
-    <footer class="startPageSectionFooter">
-        <div class="startPageSectionFooterInfo">
-            Made by Me!!!
-        </div>
-        <button class="startPageHeaderResetButton">Resett</button>
-    </footer>
-    <script type="module" src="./js/index.js">
-    </script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>
-
-<!--     
-
-            <input class="destinationSearchInput" type="text" placeholder="Destinasjon">
-            <button class="destinationSearchButton">Søk</button>
-
-
-<button class="mapButton">Til kart</button>
-<button class="addLocationButton">Legg til med søk</button>
--->

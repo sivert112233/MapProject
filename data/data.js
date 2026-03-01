@@ -95,7 +95,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 14,
             bookCode: 'Lager'
         }
@@ -203,7 +203,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 15,
             bookCode: 'Lager'
         }
@@ -346,7 +346,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 20,
             bookCode: 'Lager'
         }
@@ -434,7 +434,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 20,
             bookCode: 'Lager'
         }
@@ -464,7 +464,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 4,
             bookCode: 'Lager'
         }
@@ -593,7 +593,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 18,
             bookCode: 'Lager'
         }
@@ -667,7 +667,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 10,
             bookCode: 'Lager'
         }
@@ -725,7 +725,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 8,
             bookCode: 'Lager'
         }
@@ -846,7 +846,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 17,
             bookCode: 'Lager'
         }
@@ -947,7 +947,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 14,
             bookCode: 'Lager'
         }
@@ -1055,7 +1055,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 15,
             bookCode: 'Lager'
         }
@@ -1152,7 +1152,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 13,
             bookCode: 'Lager'
         }
@@ -1247,7 +1247,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 13,
             bookCode: 'Lager'
         }
@@ -1335,7 +1335,7 @@ export const routeData = {
         {
             loc: 'Rudshøgda',
             des: 'Lager',
-            latLng: [60.90766983110191, 10.811693152286608],
+            latLng: [60.90870473236757, 10.810460350867555],
             stopNr: 12,
             bookCode: 'Lager'
         }
