@@ -48,7 +48,7 @@ function addLocationBySearch() {
                     const lon = Number(des.value.slice(des.value.search(/ /i) + 1, des.value.length));
 
 
-                    pageMain.innerHTML = `
+                    document.querySelector('.startPageMainScroll').innerHTML = `
                         <div id="map"></div>
                     `;
 
@@ -64,10 +64,11 @@ function addLocationBySearch() {
                     L.marker([lat, lon]).addTo(map).on('click', event => removeLocation(event));
 
                     document.querySelector('.startPageMainAddInputBox').innerHTML = `
-                        <p>Er dette rikting locasjon?</p>
-                        <button class="destinationConfirmButton" value='y'>Ja</button>
-                        <button class="destinationConfirmButton" value='n'>Nei</button>
-                    `;
+                            <div class="destinationConfirmBox">
+                                <button class="destinationConfirmButton" value='n'>Kansellere</button>
+                                <button class="destinationConfirmButton" value='y'>Legg til</button>
+                            </div>
+                        `;
 
                     document.querySelectorAll('.destinationConfirmButton').forEach(x => {
                         x.addEventListener('click', () => {
@@ -86,6 +87,7 @@ function addLocationBySearch() {
                             }
                         });
                     });
+
                 });
             });
         }

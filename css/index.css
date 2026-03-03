@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100px;
+    height: 99px;
     z-index: 10;
     border-bottom: 1px solid black;
     display: flex;
@@ -21,7 +21,7 @@
 
 .startPageHeaderButtonleft {
     height: 100%;
-    width: 10%;
+    width: 20vw;
     border: none;
     background-color: white;
     border-right: 1px solid;
@@ -29,7 +29,7 @@
 
 .startPageHeaderButtonRight {
     height: 100%;
-    width: 10%;
+    width: 20vw;
     border: none;
     background-color: white;
     border-left: 1px solid;
@@ -59,9 +59,10 @@
 
 .startPageMainDisplayBox {
     display: grid;
-    grid-template-columns: 10vw 1fr;
+    grid-template-columns: 20vw 1fr;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid black;
 }
 
 .startPageMainDisplayStopNrbox {
@@ -69,7 +70,7 @@
     align-items: center;
     justify-content: center;
     border-right: 1px solid black;
-    height: 100%;
+    height: 99%;
 
 }
 
@@ -107,31 +108,54 @@
 /*------------------------------------------------------------*/
 .startPageMainAddInputBox {
     position: absolute;
-    bottom: 0;
     height: 100px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 9fr 1fr;
-}
-
-.startPageMainAddInputBox input {
-    border: none;
-    border-top: 1px solid;
-    height: 100%;
-    background-color: white;
-    text-align: center;
-    font-size: large;
-    border-right: 1px solid;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid black;
 }
 
 .startPageMainAddInputBox button {
     height: 100%;
     background-color: white;
     border: none;
-    border-top: 1px solid;
 }
 
 .startPageMainAddInputBox button:active {
     color: white;
     background-color: rgb(0, 0, 0);
+}
+
+.destinationConfirmBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.destinationConfirmBox button{
+    border: 1px solid;
+    width: 45%;
+    height: 80%;
+}
+
+.destinationSearchBox{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    align-items: center;
+}
+
+.destinationSearchInput{
+    height: 99%;
+    text-align: center;
+    border: none;
+    border-right: 1px solid black;
+}
+
+.destinationSearchButton{
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: white;
 }
