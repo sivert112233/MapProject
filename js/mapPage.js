@@ -40,16 +40,33 @@ function markerOptions(x, markerEvent) {
         markerEvent.target.remove();
 
         //Removing from local storage.
-        const array = JSON.parse(localStorage.getItem('routeLatAndLon'));
-        const returnArray = [];
-        array.forEach(location => {
-            if (location.includes(x[0] && x[1])) {
-                return
-            } else {
-                returnArray.push(location);
-            }
-        });
-        localStorage.setItem('routeLatAndLon', JSON.stringify(returnArray));
+        const arrayAuto = JSON.parse(localStorage.getItem('routeLatAndLon'));
+        const arrayManuel = JSON.parse(localStorage.getItem('manuallyAdded'));
+
+        if (arrayAuto) {
+            const autoReturnArray = [];
+            arrayAuto.forEach(location => {
+                if (location.includes(x[0] && x[1])) {
+                    return
+                } else {
+                    autoReturnArray.push(location);
+                }
+            });
+            localStorage.setItem('routeLatAndLon', JSON.stringify(autoReturnArray));
+        }
+
+        if (arrayManuel) {
+            const manualReturnArray = [];
+            arrayManuel.forEach(location => {
+                if (location.includes(x[0] && x[1])) {
+                    return
+                } else {
+                    manualReturnArray.push(location);
+                }
+            });
+
+            localStorage.setItem('manuallyAdded', JSON.stringify(manualReturnArray));
+        }
 
         //Removing display
         document.querySelector('#markerClicked').style.display = 'none';
