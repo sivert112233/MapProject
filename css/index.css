@@ -103,6 +103,11 @@
     color: white;
 }
 
+.startPageMainDisplayManual{
+    background-color: lightgreen;
+    height: 100%;
+    width: 100%;;
+}
 /*------------------------------------------------------------*/
 .startPageMainAddInputBox {
     position: absolute;
@@ -155,5 +160,11 @@
     height: 100%;
     width: 100%;
     border: none;
+    background-color: white;
+}
+.displayBoxLocResultButton{
+    display: flex;
+    margin: 10px;
+    border: 1px solid black;
     background-color: white;
 }
